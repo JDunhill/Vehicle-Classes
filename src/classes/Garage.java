@@ -38,17 +38,10 @@ public class Garage {
         }
     }
 
-    public void removeVehicleType(String type) {
-        boolean deleted = false;
+    public void removeVehicleType(Class s) {
         for (int i = 0; i < vehicleList.size(); i++) {
             Vehicle v = vehicleList.get(i);
-            if (type.equals("car") && v instanceof Car) {
-                vehicleList.remove(i);
-            }
-            else if (type.equals("van") && v instanceof Van) {
-                vehicleList.remove(i);
-            }
-            else if (type.equals("bike") && v instanceof Bike) {
+            if (v.getClass() == s) {
                 vehicleList.remove(i);
             }
         }
